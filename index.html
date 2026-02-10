@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ForeSight™ Operational Risk Console (b.1)</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="logoBox">ForeSight™</div>
+      <div class="sub">Operational Risk Console • Case Study b.1 (Public Data)</div>
+    </div>
+    <div class="badge">
+      <div class="badgeLabel">ForeSight Risk Index</div>
+      <div id="riskIndex" class="badgeValue">—</div>
+      <div class="badgeFoot">Proxy score (public-only)</div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Cost Stack (Proxy)</h2>
+      <canvas id="costPie"></canvas>
+      <p class="hint">Modeled proxy split. Replace with internal AP + utility for exact mapping.</p>
+    </section>
+
+    <section class="card">
+      <h2>Risk Meters</h2>
+      <div class="meters" id="meters"></div>
+      <p class="hint">Scores reflect public signals + unknowns. Not internal accounting.</p>
+    </section>
+
+    <section class="card">
+      <h2>Freight Activity (Public)</h2>
+      <canvas id="freightLine"></canvas>
+      <p class="hint">Source: FRED TSIFRGHT (CSV in repo).</p>
+    </section>
+
+    <section class="card">
+      <h2>Freight Price Pressure (Public)</h2>
+      <canvas id="freightPpi"></canvas>
+      <p class="hint">Source: FRED WPU301 (CSV in repo).</p>
+    </section>
+
+    <section class="card full">
+      <h2>Case Study b.1 Participation + Disclaimer</h2>
+      <div class="disclaimer">
+        <strong>Public-information analysis only.</strong> This console is informational and non-invasive.
+        It can be upgraded if internal data is voluntarily provided (utility invoices, vendor spend summaries,
+        payroll totals, equipment list). That does not mean there is any obligation to proceed.
+        Not accounting/tax/legal/investment advice. Modeled ranges are clearly labeled.
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    Sources: EIA Open Data (energy) • FRED (freight activity + freight price pressure) • BLS (labor proxies)
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
